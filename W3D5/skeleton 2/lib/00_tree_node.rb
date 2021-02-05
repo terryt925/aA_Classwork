@@ -31,8 +31,32 @@ class PolyTreeNode
     child.parent = self
   end
 
-  def remove_child
+  def remove_child(old_child)
+    raise "error" if !self.children.include?(old_child) #!= nil
+    old_child.parent = nil if old_child.parent != nil
+  end
 
+  def dfs(target)
+    return self if self.value == target
+    return nil if self.children.empty?
+    self.children.each do |ele|
+      output = ele.dfs(target)
+      return output if output != nil #&& output.value == target
+    end
+    nil
+  end
+
+  def bfs(target)
+    
   end
 
 end
+
+# class Searchable
+#   def dfs(target)
+#     return self if self.value == target
+#     self.children.each do |idx|
+#       dfs(idx)
+#     end
+#   end
+# end
