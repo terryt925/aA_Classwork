@@ -6,7 +6,8 @@ class KnightPathFinder
   attr_reader :root_node
 
   def self.valid_moves(pos)
-
+    output = []
+    
   end
 
   def initialize(start_pos)
@@ -16,11 +17,21 @@ class KnightPathFinder
   end
 
   def new_move_Positions(pos)
-    if !@considered_positions.include?(pos)
-      KnightPathFinder.valid_moves(pos)
-      @considered_positions << pos
-      return pos
+    arr = KnightPathFinder.valid_moves(pos)
+    output = []
+    arr.each do |node|
+      if !@considered_positions.include?(node)
+        @considered_positions << node
+        output << node
+      end
     end
+    return output
+    
+    # if !@considered_positions.include?(pos)
+    
+    #   @considered_positions << pos
+    #   return pos
+    # end
   end
 
 end
