@@ -34,6 +34,17 @@ class KnightPathFinder
     # end
   end
 
+  def build_move_tree
+    queue = [@root_node]
+    while !queue.empty?
+      node = queue.shift
+      return node if node.value == target
+      queue += new_move_Positions(node)
+    end
+    nil
+  end
+  
+
 end
 
 
