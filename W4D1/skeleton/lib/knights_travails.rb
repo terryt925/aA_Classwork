@@ -11,7 +11,7 @@ class KnightPathFinder
   end
 
   def find_path
-
+    puts "hello"
   end
 
 end
