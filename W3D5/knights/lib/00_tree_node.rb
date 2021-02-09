@@ -48,15 +48,16 @@ class PolyTreeNode
 
   def bfs(target)
     queue = [self]
-    until queue.empty?
-      el = queue.shift
-      return el if el.value == target
-      queue.concat(el.children) if !el.children.empty?
+    while !queue.empty?
+      node = queue.shift
+      return node if node.value == target
+      queue += node.children
     end
     nil
   end
 
 end
+
 
 # class Searchable
 #   def dfs(target)
