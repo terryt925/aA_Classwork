@@ -1,19 +1,29 @@
 class Board
 
-
+  attr_reader :rows
   def initialize
-    @rows = Array.new(8) {Array.new(8, @null_piece)}
-    @null_piece = NullPiece.instance
+    @rows = Array.new(8) {Array.new(8, nil)}
+    # @null_piece = NullPiece.instance
   end
 
   def move_piece(start_pos, end_pos)
-    raise "invalid start position" if @rows[start_pos] == @null_piece
-    raise "invalid end position" if @rows[end_pos] != @null_piece
+    raise "invalid start position" if self[start_pos] != nil
+    raise "invalid end position" if self[end_pos] != nil
+    
 
+    piece = self[start_pos] #wrap in conditionals
+    self[end_pos] = piece
+    self[start_pos] = :x
+  end
+  
+  def [](position)
+    row,col = position
+    @rows[row][col]
+  end
 
-    piece = @rows[start_pos] #wrap in conditionals
-    @rows[end_pos] = piece
-    #@rows[start_pos] = @null_piece
+  def []=(position,value)
+    row,col = position
+    @rows[row][col] = value
   end
 
 
