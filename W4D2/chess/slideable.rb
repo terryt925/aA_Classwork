@@ -23,13 +23,16 @@ end
 
 private
 
-# def move_dir(value)
-#   return HORIZONTAL_DIRS if value == horizontal
-#   return DIAGONAL_DIRS if value == diagonal
-#   return HORIZONTAL_DIRS + DIAGONAL_DIRS
-# end
+def grow_unblocked_moves_in_dir(dx, dy)
+  potential_moves = []
+  if board[dx][dy] == NullPiece && 
+    potential_moves << [dx, dy]
+    self.grow_unblocked_moves_in_dir(dx+dx, dy+dy)
+  elsif board[dx][dy] == 
 
-private
+  end
+end
+
 
 
 
