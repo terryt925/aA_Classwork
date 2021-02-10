@@ -38,7 +38,7 @@ def grow_unblocked_moves_in_dir(dx, dy)
   col = dy
   valid = true
   while valid
-    if valid_pos([row, col])
+    if valid_pos([row + x, col + y])
       potential_moves << [row, col]
       row += dx
       col += dy
