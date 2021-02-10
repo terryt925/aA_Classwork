@@ -33,6 +33,7 @@ private
 
 def grow_unblocked_moves_in_dir(dx, dy)
   potential_moves = []
+  x, y = self.position
   row = dx
   col = dy
   valid = true
