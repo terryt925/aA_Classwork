@@ -4,7 +4,7 @@ require_relative "stepable.rb"
 
 class Piece
 
-  attr_reader :position
+  attr_accessor :position
 
 def initialize(color,board,pos)
   @color = color 
@@ -25,4 +25,19 @@ def empty?(pos)
   @board[pos] == NullPiece.instance
 end
 
+
+
+def valid_moves?
 end
+
+def pos=(val)
+  
+  self.position = val
+end
+
+private
+def move_into_check?(end_pos)
+
+end
+
+end #end of class
