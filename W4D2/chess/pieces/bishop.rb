@@ -7,6 +7,7 @@ include Slideable
 def move_dirs
   self.diagonal_dirs
 end
+
 def symbol
 end
 

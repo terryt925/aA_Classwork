@@ -1,4 +1,4 @@
-module Stepable
+module Stepable 
 
   def moves
     potential_moves = []
