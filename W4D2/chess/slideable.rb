@@ -17,7 +17,7 @@ def horizontal_dirs
   return HORIZONTAL_DIRS
 end
 
-def vertical_dirs
+def diagonal_dirs
   return DIAGONAL_DIRS
 end
 
