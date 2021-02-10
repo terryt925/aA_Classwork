@@ -12,11 +12,22 @@ DIAGONAL_DIRS = [
   [-1,1],
   [-1,-1]
 ]
-def move_dir(value)
-  return HORIZONTAL_DIRS if value == horizontal
-  return DIAGONAL_DIRS if value == diagonal
-  return HORIZONTAL_DIRS + DIAGONAL_DIRS
+
+def horizontal_dirs
+  return HORIZONTAL_DIRS
 end
+
+def vertical_dirs
+  return DIAGONAL_DIRS
+end
+
+private
+
+# def move_dir(value)
+#   return HORIZONTAL_DIRS if value == horizontal
+#   return DIAGONAL_DIRS if value == diagonal
+#   return HORIZONTAL_DIRS + DIAGONAL_DIRS
+# end
 
 private
 
