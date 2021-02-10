@@ -13,7 +13,7 @@ class Board
 
     piece = self[start_pos] #wrap in conditionals
     self[end_pos] = piece
-    self[start_pos] = :x
+    self[start_pos] = nil
   end
   
   def [](position)
