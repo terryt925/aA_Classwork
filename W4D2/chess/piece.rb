@@ -7,7 +7,7 @@ class Piece
   attr_reader :position
 
 def initialize(color,board,pos)
-  @color = symbol
+  @color = color 
   @board = board
   @position = pos
 end
