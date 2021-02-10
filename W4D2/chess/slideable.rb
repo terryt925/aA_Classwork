@@ -33,12 +33,19 @@ private
 
 def grow_unblocked_moves_in_dir(dx, dy)
   potential_moves = []
-  if board[dx][dy] == NullPiece && 
-    potential_moves << [dx, dy]
-    self.grow_unblocked_moves_in_dir(dx+dx, dy+dy)
-  elsif board[dx][dy] == 
-
+  row = dx
+  col = dy
+  valid = true
+  while valid
+    if valid_pos([row, col])
+      potential_moves << [row, col]
+      row += dx
+      col += dy
+    else
+      valid = false
+    end
   end
+  potential_moves
 end
 
 

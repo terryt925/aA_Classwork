@@ -26,6 +26,11 @@ class Board
     @rows[row][col] = value
   end
 
+  def valid_pos(pos) #may need to change when we add opponent pieces
+    row, col = pos
+    return true if row.between(0..7) && col.between(0..7)
+    false
+  end
 
-
+ # valid_pos( current_pos[2, 3]  + hori_dir[0, 1] == [2, 4]) = true
 end
