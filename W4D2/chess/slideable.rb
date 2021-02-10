@@ -21,6 +21,14 @@ def diagonal_dirs
   return DIAGONAL_DIRS
 end
 
+def moves
+  all_moves = []
+  self.move_dirs.each do |dir|
+    all_moves + self.grow_unblocked_moves_in_dir(dir)
+  end
+  all_moves
+end
+
 private
 
 def grow_unblocked_moves_in_dir(dx, dy)
