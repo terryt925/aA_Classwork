@@ -1,8 +1,24 @@
 class Board
 
-  BLACK_PIECES = {
-    Pawn.new()
-  }
+  BLACK_PIECES = [
+    Pawn.new(:♙, @rows, [1,0]),
+    Pawn.new(:♙, @rows, [1,1]),
+    Pawn.new(:♙, @rows, [1,2]),
+    Pawn.new(:♙, @rows, [1,3]),
+    Pawn.new(:♙, @rows, [1,4]),
+    Pawn.new(:♙, @rows, [1,5]),
+    Pawn.new(:♙, @rows, [1,6]),
+    Pawn.new(:♙, @rows, [1,7]),
+    Rook.new(:♖, @rows, [0,0]),
+    Rook.new(:♖, @rows, [0,7]),
+    Knight.new(:♘, @rows, [0,1]),
+    Knight.new(:♘, @rows, [0,1]),
+    Bishop.new(:♗, @rows, [0,2]),
+    Bishop.new(:♗, @rows, [0,5]),
+    Queen.new(:♕, @rows, [0,3]),
+    King.new(:♔, @rows, [0,4])
+  ]
+
 
   attr_reader :rows
   def initialize

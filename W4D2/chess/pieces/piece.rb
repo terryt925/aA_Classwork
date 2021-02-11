@@ -31,11 +31,11 @@ def valid_moves?
 end
 
 def pos=(val)
-  
   self.position = val
 end
 
 private
+
 def move_into_check?(end_pos)
 
 end
