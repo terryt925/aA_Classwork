@@ -1,5 +1,9 @@
 class Board
 
+  BLACK_PIECES = {
+    Pawn.new()
+  }
+
   attr_reader :rows
   def initialize
     @null_piece = NullPiece.instance
@@ -32,5 +36,14 @@ class Board
     self[end_pos] = piece
     self[start_pos] = @null_piece
   end
+
+  def pieces
+
+  end
+
+  def add_piece(piece,pos)
+    self[pos] = piece
+  end
+
   # valid_pos( current_pos[2, 3]  + hori_dir[0, 1] == [2, 4]) = true
 end
