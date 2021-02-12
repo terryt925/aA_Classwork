@@ -25,7 +25,7 @@ end
 # p permutation("abcd").length   #=> true
 
 
-# phase 2   O(n^3)
+# phase 2   O(n^2)
 def second_anagram?(str_1,str_2)
   str_1.each_char do |c|
     index = str_2.split("").find_index(c)
@@ -39,7 +39,7 @@ end
 # p second_anagram?("elvis", "lives")    #=> true
 
 
-#phase 3    O(n^3)
+#phase 3    O(n^2) built in sort is quick sort so n^2
 
 def third_anagram?(str_1,str_2)
   str_1.split("").sort == str_2.split("").sort
