@@ -49,22 +49,24 @@ end
 
 list1 = [5, 3, -7]
 list2 = [2, 3, -6, 7, -6, 7]
-list3 = [-5, -1, -3]
-p largest_contiguous_subsum1(list1) # => 8
-p largest_contiguous_subsum1(list2) # => 8
-p largest_contiguous_subsum1(list3) # => -1
+list3 = [-5, -1, -3] 
+# p largest_contiguous_subsum1(list1) # => 8
+# p largest_contiguous_subsum1(list2) # => 8
+# p largest_contiguous_subsum1(list3) # => -1
+ 
 
 
 # time : O(n)    space : O(1)
 def largest_contiguous_subsum2(arr)
-  largest_sum = 0
-  current_sum = 0
-  (0...arr.length - 1).each do |i|
-    if arr[i] + arr[i+1] > largest_sum
-      current_sum = arr[i] + arr[i+1] 
-      current_sum = 
-    end
+  largest_sum = arr[0] 
+  current_sum = arr[0] 
+  (1..arr.length - 1).each do |i| # from 1 !!!!!!!!! 
+    current_sum = current_sum < 0 ? arr[i] : current_sum + arr[i]
     largest_sum = current_sum if current_sum > largest_sum
   end
   largest_sum
 end
+
+p largest_contiguous_subsum2(list1) # => 8
+p largest_contiguous_subsum2(list2) # => 8
+p largest_contiguous_subsum2(list3) # => -1
