@@ -4,7 +4,7 @@ def my_uniq(arr)
 end
 
 class Array
-
+ 
   def two_sum
 
     result = []
