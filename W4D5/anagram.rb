@@ -49,13 +49,14 @@ end
 # p third_anagram?("gizmo", "sally")    #=> false
 # p third_anagram?("elvis", "lives")    #=> true
 
-#phase 4   O(n)
+#phase 4   O(n) 
 def fourth_anagram?(str_1, str_2)
+  return false if str_1.length != str_2.length 
   hash = Hash.new(0)
   str_1.each_char {|char| hash[char] += 1}
   str_2.each_char {|char| hash[char] -= 1}
-  hash.select {|k, v| v == 0}.empty?
+  hash.all? {|k, v| v == 0}
 end
 
 p fourth_anagram?("gizmo", "sally")    #=> false
- p fourth_anagram?("elvis", "lives")    #=> true
+p fourth_anagram?("elvis", "lives")    #=> true
