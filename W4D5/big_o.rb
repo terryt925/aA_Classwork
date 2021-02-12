@@ -64,5 +64,7 @@ def largest_contiguous_subsum2(arr)
       current_sum = arr[i] + arr[i+1] 
       current_sum = 
     end
+    largest_sum = current_sum if current_sum > largest_sum
   end
+  largest_sum
 end
