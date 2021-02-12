@@ -35,10 +35,34 @@ end
 #phase 1 => O(n^2)
 #phase 2 => O(n)
 
-def largest_contiguous_subsum(arr)
+
+# phase : O(n^3)
+def largest_contiguous_subsum1(arr)
+  res = []
   (0...arr.length).each do |i|
-    (i+1...arr.length).each do |j|
-      temp = arr[i..j]
+    (i...arr.length).each do |j|
+      res << arr[i..j].sum 
+    end
+  end
+  res.max 
+end
+
+list1 = [5, 3, -7]
+list2 = [2, 3, -6, 7, -6, 7]
+list3 = [-5, -1, -3]
+p largest_contiguous_subsum1(list1) # => 8
+p largest_contiguous_subsum1(list2) # => 8
+p largest_contiguous_subsum1(list3) # => -1
+
+
+# time : O(n)    space : O(1)
+def largest_contiguous_subsum2(arr)
+  largest_sum = 0
+  current_sum = 0
+  (0...arr.length - 1).each do |i|
+    if arr[i] + arr[i+1] > largest_sum
+      current_sum = arr[i] + arr[i+1] 
+      current_sum = 
     end
   end
 end
