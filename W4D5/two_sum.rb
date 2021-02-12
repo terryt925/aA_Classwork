@@ -15,8 +15,8 @@ end
 
 # sorting O(nlogn)
 def okay_two_sum?(arr, target_sum)
-  arr.sort! # O(n)
-  arr.each.with_index do |ele,i| 
+  arr.sort! # O(n log n)
+  arr.each.with_index do |ele,i| # O(n log n)
     target = target_sum - ele  
     res = b_search(arr[0...i] + arr[i+1..-1], target) # exclude the current ele
     return true unless res.nil?
@@ -39,9 +39,37 @@ def b_search(arr, target)
   end
 end
 
+
+# # Hash Map   O(n)
+# def two_sum?(arr, target_sum)
+#   hash = Hash.new(false)
+#   arr.each do |ele|
+#     hash[ele] = true
+#   end
+#   arr.each do |ele|
+#     return true if hash[target_sum-ele] && ele != target_sum - ele
+#   end
+#   false
+# end
+
+
+# Hash Map O(n)
+def two_sum?(arr, target_sum)
+  hash = Hash.new(false)
+  arr.each do |ele|
+    if hash[target_sum-ele] == true
+      return true
+    else
+      hash[ele] = true
+    end
+  end
+  false
+end
+
+
 arr = [0, 1, 5, 7]
-p okay_two_sum?(arr, 6) # => should be true
-p okay_two_sum?(arr, 10) # => should be false
+p two_sum?(arr, 6) # => should be true
+p two_sum?(arr, 10) # => should be false
 
 
 
