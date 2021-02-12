@@ -1,4 +1,4 @@
-
+# time:O(n!)
 def first_anagram?(str1, str2)
   res = permutation(str1)
   res.include?(str2)
@@ -17,9 +17,23 @@ def permutation(str)
 end
 
 
-p first_anagram?("gizmo", "sally")    #=> false
-p first_anagram?("elvis", "lives")    #=> true
+# p first_anagram?("gizmo", "sally")    #=> false
+# p first_anagram?("elvis", "lives")    #=> true
 
 
 # p permutation("gizmo")    #=> false
 # p permutation("abcd").length   #=> true
+
+
+# phase 2
+def second_anagram?(str_1,str_2)
+  str_1.each_char do |c|
+    index = str_2.split("").find_index(c)
+    str_2 = str_2[0...index] + str_2[index + 1..-1] unless index.nil?
+  end
+  str_2.empty?
+end
+
+
+p second_anagram?("gizmo", "sally")    #=> false
+p second_anagram?("elvis", "lives")    #=> true
