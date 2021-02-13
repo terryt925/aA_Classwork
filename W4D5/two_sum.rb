@@ -53,7 +53,7 @@ end
 # end
 
 
-# Hash Map O(n)
+# Hash Map O(n) space O(1)
 def two_sum?(arr, target_sum)
   hash = Hash.new(false)
   arr.each do |ele|
