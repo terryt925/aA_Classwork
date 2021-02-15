@@ -70,7 +70,7 @@ class ResizingIntSet
   end
 
   def insert(num)
-    resize! if @count >= num_buckets
+    resize! if @count == num_buckets
     if !self.include?(num)
       self[num] << num 
       @count += 1
@@ -102,6 +102,7 @@ class ResizingIntSet
   def resize!
     old_store = @store.dup
     @store = Array.new(num_buckets*2) {Array.new}
+    @count = 0
     old_store.each do |bucket|
       bucket.each do |ele|
         self.insert(ele)
