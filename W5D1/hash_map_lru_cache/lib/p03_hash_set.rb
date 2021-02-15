@@ -15,12 +15,12 @@ class HashSet
   end
 
   def include?(key)
-    self[key].include?(key)
+    self[key].include?(key.hash)
   end
 
   def remove(key)
     if self.include?(key)
-      self[key].delete(key) 
+      self[key].delete(key.hash) 
       @count -= 1
     end
   end
