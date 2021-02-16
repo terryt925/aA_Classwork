@@ -40,16 +40,15 @@ class LinkedList
   end
 
   def first
-    @head
+    @head.next
   end
 
   def last
-    return @head if @tail.key == nil && @tail.prev == @head
-    @tail
+    @tail.prev
   end
 
   def empty?
-    @head.key == nil && @tail.key == nil
+    @head.next == @tail && @tail.prev == @head
   end
 
   def get(key)
@@ -59,15 +58,18 @@ class LinkedList
   end
 
   def append(key, val)
-    new_tail = Node.new(key,val)
-    if @head.key == nil && @tail.key == nil
-      @head = new_tail
-      @tail = new_tail
+    new_node = Node.new(key,val)
+    if @head.next == @tail && @tail.prev == @head
+      @head.next = new_node
+      @tail.prev = new_node
+      new_node.next = @tail
+      new_node.prev = @head
       return
     end
-    @tail.next = new_tail
-    new_tail.prev = @tail
-    @tail = new_tail
+    @tail.prev.next = new_node
+    new_node.prev = @tail.prev
+    @tail.prev = new_node
+    new_node.next = @tail
   end
 
   def update(key, val)
@@ -76,9 +78,10 @@ class LinkedList
   def remove(key)
   end
 
-  def each
+  def each(&prc)
     list_vals_yielded = []
-    
+    current_node = @head
+   # while current_node !=
   end
 
   # uncomment when you have `each` working and `Enumerable` included
