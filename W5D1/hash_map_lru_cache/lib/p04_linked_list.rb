@@ -49,7 +49,7 @@ class LinkedList
   end
 
   def empty?
-    @tail.key == nil && @head.key == nil && @tail.prev == @head
+    @head.key == nil && @tail.key == nil
   end
 
   def get(key)
@@ -59,7 +59,15 @@ class LinkedList
   end
 
   def append(key, val)
-
+    new_tail = Node.new(key,val)
+    if @head.key == nil && @tail.key == nil
+      @head = new_tail
+      @tail = new_tail
+      return
+    end
+    @tail.next = new_tail
+    new_tail.prev = @tail
+    @tail = new_tail
   end
 
   def update(key, val)
@@ -69,6 +77,8 @@ class LinkedList
   end
 
   def each
+    list_vals_yielded = []
+    
   end
 
   # uncomment when you have `each` working and `Enumerable` included
