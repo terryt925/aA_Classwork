@@ -3,7 +3,13 @@
 <ul> 
   <% @cats.each do |cat| %>
     <li>
-      <%= render "cat", cat: @cat, action: "index" %>
+     <ul>
+      <li><%= cat.name %></li>
+      <li><%= cat.age %></li>
+      <li><%= cat.color %></li>
+      <li><%= cat.sex %></li>
+      <li><%= cat.description %></li>
+    </ul>
     </li>
   <% end %>
 </ul>
