@@ -48,6 +48,14 @@ def password=(password)
   @password = password
 end
 
+has_many :cats,
+  foreign_key: :user_id,
+  class_name: :Cat
+
+has_many :requests,
+  foreign_key: :user_id,
+  class_name: :CatRentalRequest
+
 
 private
 

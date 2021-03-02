@@ -9,6 +9,7 @@
 #  status     :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  user_id    :integer          not null
 #
 class CatRentalRequest < ApplicationRecord
   # .freeze renders constants immutable
@@ -18,8 +19,15 @@ class CatRentalRequest < ApplicationRecord
   validates :status, inclusion: STATUS_STATES
   validate :start_must_come_before_end
   validate :does_not_overlap_approved_request
+  validates :user_id, presence:true
 
-  belongs_to :cat
+  belongs_to :cat,
+    foreign_key: :cat_id,
+    class_name: :Cat
+
+  belongs_to :requestor,
+    foreign_key: :user_id,
+    class_name: :User
 
   after_initialize :assign_pending_status
 

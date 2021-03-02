@@ -10,6 +10,7 @@
 #  description :text
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  user_id     :string           not null
 #
 require 'action_view'
 
@@ -22,6 +23,7 @@ class Cat < ApplicationRecord
   validates :color, inclusion: CAT_COLORS
   validates :sex, inclusion: %w(M F)
   validates :birth_date, :color, :name, :sex, presence: true
+  # validates :user_id, presence:true # presence: {scope: :user_id}  <-- we do not have to do this due to the belongs_to :owner validation the relationship
 
   # Remember, has_many is just a method where the first argument is
   # the name of the association, and the second argument is an options
@@ -29,6 +31,14 @@ class Cat < ApplicationRecord
   has_many :rental_requests,
     class_name: :CatRentalRequest,
     dependent: :destroy
+
+  belongs_to :owner,
+    foreign_key: :user_id,
+    class_name: :User
+
+  has_many :rental_requests,
+    foreign_key: :cat_id,
+    class_name: :CatRentalRequest
 
   def age
     time_ago_in_words(birth_date)
