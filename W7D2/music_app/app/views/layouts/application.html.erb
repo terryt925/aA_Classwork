@@ -10,6 +10,24 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="test">
+      <% if logged_in? %>
+        <%= current_user.email %>
+        <form action="<%= session_url %>" method = "POST">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input type="hidden" name="_method" value="DELETE">
+        <input class="sign" type="submit" value="Sign Out">
+      <% else %>
+        <a href="<%= new_user_url %>" class="sign">Sign Up</a>
+        <a href="<%= new_session_url %>" class="sign">Sign In</a>
+      <% end %>
+    </div>
+    <header>
+      <h1>Music App</h1>
+    </header>
   </body>
+  <div class="yield">
+    <%= yield %>
+  </div>
 </html>
+
