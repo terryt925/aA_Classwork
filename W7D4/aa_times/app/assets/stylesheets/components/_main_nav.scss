@@ -45,7 +45,11 @@
   }
 }
 
+button:hover {
+  background-color: rgb(53, 46, 46);
+}
+
 .left-nav > ul > li:hover,
 .right-nav > ul > li:last-of-type:hover {
-  color: $lightest-gray;
+  color: red;
 }
