@@ -7,11 +7,12 @@
 .left-nav > ul,
 .right-nav > ul {
   display: flex;
-  align-items: baseline;
+  align-items: center;
+  margin: 5px;
 }
 
 .left-nav {
-
+  margin: 5px;
   > ul {
     > li {
       font-family: sans-serif;
@@ -29,7 +30,7 @@
 .right-nav  {
 
   > ul {
-
+    
     > li {
       margin: 5px;
     }

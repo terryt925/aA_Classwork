@@ -8,13 +8,14 @@
 
 .language-nav {
 	position: absolute;
-	top: -15px;
+	top: -14px;
 	left: calc(50% - (177.78px/2));
 	background: white;
 	border: 1px solid $light-gray;
 	border-bottom: none;
 	border-top-left-radius: 3px;
 	border-top-right-radius: 3px;
+	z-index: 1;
 
 	a {
 		margin: 0 5px;
@@ -35,6 +36,12 @@
 	li:first-of-type {
 		font-weight: bold;
 	}
+}
+
+.empty {
+	border-bottom: 1px solid $light-gray;
+	width: 100%;
+	z-index: -1;
 }
 
 .logo {
