@@ -2624,3 +2624,20 @@ Started GET "/assets/application.self-190cb0c756697eed6fded20e64d6d4777a356c50c1
 Started GET "/assets/application.self-190cb0c756697eed6fded20e64d6d4777a356c50c102797a54307e28969787b1.css?body=1&livereload=1614971819152&livereload=1614971342194&livereload=1614971426174&livereload=1614971729353" for ::1 at 2021-03-05 11:16:59 -0800
 Started GET "/assets/application.self-190cb0c756697eed6fded20e64d6d4777a356c50c102797a54307e28969787b1.css?body=1&livereload=1614971821097&livereload=1614971342194&livereload=1614971426174&livereload=1614971729353" for ::1 at 2021-03-05 11:17:01 -0800
 Started GET "/assets/application.self-190cb0c756697eed6fded20e64d6d4777a356c50c102797a54307e28969787b1.css?body=1&livereload=1614971821098&livereload=1614971342194&livereload=1614971426174&livereload=1614971729353" for ::1 at 2021-03-05 11:17:01 -0800
+Started GET "/" for ::1 at 2021-03-05 11:27:26 -0800
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from block (3 levels) in <class:Railtie> at /home/aibsin/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.0.7.2/lib/active_record/railtie.rb:113)
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered shared/_gear_dropdown.html.erb (0.5ms)
+  Rendered shared/_main_nav.html.erb (2.1ms)
+  Rendered shared/_masthead.html.erb (0.5ms)
+  Rendered shared/_sections_nav.html.erb (0.3ms)
+  Rendered shared/_search_modal.html.erb (0.4ms)
+  Rendered shared/_main_content.html.erb (0.6ms)
+  Rendered static_pages/index.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 605ms (Views: 601.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-fbf7fcee9fc529165adc8c5ec8cd1c907bb6f8840de2fedf9a4ea78852c02fa3.css?body=1" for ::1 at 2021-03-05 11:27:27 -0800
+Started GET "/assets/new_office.jpg" for ::1 at 2021-03-05 11:27:27 -0800
+Started GET "/assets/AA_Times_Logo.png" for ::1 at 2021-03-05 11:27:27 -0800
