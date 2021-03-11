@@ -1,1 +1,16 @@
 /* PHASE 0: Sidebar */
+
+.profile-pictures {
+  display: block;
+  color: blueviolet;
+  margin-top: -10;
+  position: relative;
+}
+
+.profile-info {
+
+}
+
+.profile-nav {
+
+}
