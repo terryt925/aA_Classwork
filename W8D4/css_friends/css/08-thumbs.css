@@ -1,2 +1,16 @@
 /* PHASE 2: Thumbs */
 
+li {
+  display: flex;
+  justify-content: space-around;
+
+}
+
+li:nth-child(3) {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.thumb {
+  
+}

@@ -7,6 +7,13 @@
   position: relative;
 }
 
+.online {
+  position: absolute;
+  transform: rotate(4);
+  transform: translate(4);
+  box-shadow: 10;
+}
+
 .profile-info {
 
 }
