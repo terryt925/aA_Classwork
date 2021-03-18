@@ -49,7 +49,7 @@ Array.prototype.twosum = function(){
 //   [c, f, i],
 // ]
 
-Array.prototype.transpose = function(){
+Array.prototype.transpose = function(){ 
   const rows = this.length;
   const cols = this[0].length;
   const res = new Array(cols)
