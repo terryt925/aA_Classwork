@@ -23,9 +23,19 @@ class Game extends React.Component {
 
   render() {
     if(this.state.board.won()) {
-      return 'You Win!';
+      return(
+        <div>
+          <div>You Win</div>
+          <Board board={this.state.board} updateGame={this.updateGame} />
+        </div>
+      )
     } else if(this.state.board.lose()) {
-      return 'You Lose';
+      return(
+        <div>
+          <div>You Lose</div>
+          <Board board={this.state.board} updateGame={this.updateGame} />
+        </div>
+      )
     }
     return (
       <div>
