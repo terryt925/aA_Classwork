@@ -230,6 +230,28 @@
       <li><a href="#">Privacy</a></li>
     </ul>
 
+    <div class="modal">
+      <section class="modal-screen"></section>
+      <section class="modal-form"></section>
+    </div>
+
+    <script src="../shared/js/jquery.js"></script>
+    <script>
+      $(function () {
+
+        $("body").on("click", ".js-modal-open", function (event) {
+          event.preventDefault();
+          $(".modal").addClass("is-open");
+        });
+
+        $("body").on("click", ".js-modal-close", function (event) {
+          event.preventDefault();
+          $(".modal").removeClass("is-open");
+        });
+
+      });
+    </script>
+
   </footer>
 
 </body>
