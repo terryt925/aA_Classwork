@@ -4,6 +4,12 @@ import configureStore from './store/store';
 
 import { receiveTodos } from './actions/todo_actions';
 import { receiveTodo } from './actions/todo_actions';
+import { removeTodo } from './actions/todo_actions';
+
+import { receiveSteps } from './actions/step_actions';
+import { receiveStep } from './actions/step_actions';
+import { removeStep } from './actions/step_actions';
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("content");
@@ -15,6 +21,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.receiveTodo = receiveTodo;
   window.receiveTodos = receiveTodos;
+  window.removeTodo = removeTodo;
+
+  window.receiveStep = receiveStep;
+  window.receiveSteps = receiveSteps;
+  window.removeStep = removeStep;
+
 
   ReactDOM.render(testing, root);
 });
