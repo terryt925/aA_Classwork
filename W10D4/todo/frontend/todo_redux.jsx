@@ -10,11 +10,16 @@ import { receiveSteps } from './actions/step_actions';
 import { receiveStep } from './actions/step_actions';
 import { removeStep } from './actions/step_actions';
 
+import Root from './components/root';
+import { allTodos } from './reducers/selectors';
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("content");
 
   const testing = <h1>Todos App</h1>;
+
+  const state = { todos: { id: 1, title: "clean dog" } };
 
   const store = configureStore();
   window.store = store;
@@ -26,9 +31,10 @@ document.addEventListener("DOMContentLoaded", () => {
   window.receiveStep = receiveStep;
   window.receiveSteps = receiveSteps;
   window.removeStep = removeStep;
+  window.allTodos = allTodos;
 
 
-  ReactDOM.render(testing, root);
+  ReactDOM.render(<Root store = {store}/>, root);
 });
 
 
