@@ -1,4 +1,4 @@
-class Api::TestController < ApplicationController
+class Api::TodosController < ApplicationController
 
   def show
     render json: Todo.find(params[:id])

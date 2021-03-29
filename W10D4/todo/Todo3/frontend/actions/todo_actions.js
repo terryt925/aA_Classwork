@@ -24,5 +24,8 @@ export const removeTodo = (todo) => {
   };
 };
 
-export  const fetch
+export  const fetchAllTodos = () => (dispatch, getState) => (
+  TodoUtil.fetchTodos()
+    .then((todos) => dispatch(receiveTodos(todos)))
+)
 
